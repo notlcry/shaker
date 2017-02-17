@@ -40,6 +40,13 @@ class Script(object):
         return dict(type='script', data=self.script)
 
 
+class HttpReq(object):
+    def __init__(self, req_data):
+        self.req = req_data
+
+    def make(self):
+        return dict(type='httpreq', data=self.req)
+
 class BaseExecutor(object):
     def __init__(self, test_definition, agent):
         super(BaseExecutor, self).__init__()
